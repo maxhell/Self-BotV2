@@ -66,7 +66,7 @@ local function get_weather(location)
 	local weather = json:decode(b)
 	local city = weather.name
 	local country = weather.sys.country
-	local temp = 'دمای شهر '..city..' هم اکنون '..weather.main.temp..' درجه سانتی گراد می باشد\n____________________\n @BeyondTeam :)'
+	local temp = 'دمای شهر '..city..' هم اکنون '..weather.main.temp..' درجه سانتی گراد می باشد\n____________________\n @DozChat :)'
 	local conditions = 'شرایط فعلی آب و هوا : '
 	if weather.weather[1].main == 'Clear' then
 		conditions = conditions .. 'آفتابی☀'
@@ -88,7 +88,7 @@ local function calc(exp)
 	b,c = http.request(url)
 	text = nil
 	if c == 200 then
-    text = 'Result = '..b..'\n____________________\n @BeyondTeam :)'
+    text = 'Result = '..b..'\n____________________\n @DozChat :)'
 	elseif c == 400 then
 		text = b
 	else
@@ -125,7 +125,7 @@ end
 function run(msg, matches) 
 if matches[1] == "helpfun" and is_sudo(msg) then
 local text = [[
-_Self Bot Fun Help Commands:_
+_Masih Self Bot Fun Help Commands:_
 
 *!time*
 _Get time in a sticker_
@@ -196,7 +196,7 @@ tdcli.sendMessage(msg.from.id, 0, 1, text, 1, 'md')
 		text = text..'\nغروب آفتاب: '..data.Sunset
 		text = text..'\nاذان مغرب: '..data.Maghrib
 		text = text..'\nعشاء : '..data.Isha
-		text = text..'\n@BeyondTeam\n'
+		text = text..'\n@Dozchat\n'
 		return tdcli.sendMessage(msg.chat_id_, 0, 1, text, 1, 'html')
 	end
 --------------------------------
